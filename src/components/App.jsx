@@ -4,6 +4,7 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
+import { Container } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -37,7 +38,7 @@ export class App extends Component {
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
     return (
-      <div>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions options={['good', 'neutral', 'bad']} onLeaveFeedback={this.onButtonClick} />
         </Section>
@@ -54,7 +55,7 @@ export class App extends Component {
           )}
         </Section>
         <GlobalStyle />
-      </div>
+      </Container>
     );
   }
 }
